@@ -23,17 +23,17 @@ ament_target_dependencies(common_lib rosidl_default_runtime)
 
 install(TARGETS
         common_lib
-        # EXPORT CommonTargets
+         EXPORT CommonTargets
         ARCHIVE DESTINATION lib
         LIBRARY DESTINATION lib
         RUNTIME DESTINATION lib/${PROJECT_NAME}
-        # INCLUDES DESTINATION include
+         INCLUDES DESTINATION include
         )
 
 install(DIRECTORY include/ DESTINATION include)
 
-ament_export_include_directories(include)
-ament_export_libraries(common_lib)
+#ament_export_include_directories(include)
+#ament_export_libraries(common_lib)
 ament_export_dependencies(rosidl_default_runtime)
-# ament_export_targets(CommonTargets HAS_LIBRARY_TARGET)
+ ament_export_targets(CommonTargets HAS_LIBRARY_TARGET)
 ament_package()
